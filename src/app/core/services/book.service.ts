@@ -7,7 +7,7 @@ import { Book, NewBook } from '../models/book';
   providedIn: 'root'
 })
 export class BookService {
-  private apiUrl = 'https://crudcrud.com/api/7f6facfb7bf84d2c8fa55acdb9f9dde7/books';
+  private apiUrl = 'https://crudcrud.com/api/0b47e791501a477c8e0e507b251e71ec/books';
 
   constructor(private http: HttpClient) {}
 
