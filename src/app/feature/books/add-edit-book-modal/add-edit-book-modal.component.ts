@@ -62,6 +62,7 @@ export class AddEditBookModalComponent {
     }
   }
  editBook(){
+  if(this.addEditBookForm.valid){
   this.bookService.updateBook(this.book._id,this.addEditBookForm.value).subscribe({
     next:(res)=>{
       this.toastr.success('saved successfully');
@@ -70,6 +71,7 @@ export class AddEditBookModalComponent {
       this.toastr.success('somthing went wrong'); 
     }
     })
+  }
  }
   closeModal(shouldRefresh: boolean = false) {
     this.activeModal.close(shouldRefresh);
