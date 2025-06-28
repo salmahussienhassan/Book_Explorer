@@ -13,7 +13,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent {
   loginForm!: FormGroup;
-  showPassword = false;
+  showPassword: boolean= false;
+  isBusy:boolean=false
 
   constructor(private fb: FormBuilder,
     private authService:AuthService,
@@ -30,8 +31,10 @@ ngOnInit(): void {
 }
   onSubmit() {
     if(this.loginForm.valid){
+      this.isBusy=true
       this.authService.login(this.loginForm.value).subscribe({
         next: (res) => {
+          this.isBusy=false
           this.authService.setToken(res.token);
            this.toastr.success('Login successful');
           this.router.navigate(['/books']);
