@@ -25,7 +25,7 @@
       </div>
 
       <div class="d-grid">
-        <button class="btn btn-primary btn-lg" type="submit" [disabled]="loginForm.invalid">
+        <button class="btn btn-primary btn-lg" type="submit" [disabled]="loginForm.invalid || isBusy">
            Login
         </button>
       </div>
